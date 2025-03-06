@@ -1,0 +1,239 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-color: #1f2937;
+    --text-secondary: #4b5563;
+    --border-color: #e5e7eb;
+    --error-color: #dc2626;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem 1rem;
+}
+
+.header-content {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-icon {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header p {
+    color: var(--text-secondary);
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 64rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+}
+
+/* Form Styles */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.youtube-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+input[type="url"] {
+    width: 100%;
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="url"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+/* Error Message Styles */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--error-color);
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.how-it-works h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.step {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.step h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.step p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Footer Styles */
+footer {
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.summary-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.summary-container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.summary-content {
+    line-height: 1.6;
+    color: var(--text-color);
+    white-space: pre-line;
+}
+
+/* Loading animations */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+button:disabled {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
+
